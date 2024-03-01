@@ -1,24 +1,13 @@
 # vue-virtual-tree
 
-## Project setup
-```
-npm install
-```
+## npm install @gaplin/vue-virtual-tree
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 或
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## yarn add @gaplin/vue-virtual-tree
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 额外安装有版本要求的依赖
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 安装sass-loader，命令：npm add sass-loader@8.0.2
+
+### 安装node-sass，命令：npm add node-sass@4.14.1
