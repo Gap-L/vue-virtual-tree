@@ -9,6 +9,15 @@
     }"
     role="tree"
   >
+    <div class="input-container">
+      <Input
+        placeholder="请输入关键字，回车后进行过滤"
+        v-model="inputModel"
+        clearable
+        @change="filterTree"
+      >
+      </Input>
+    </div>
     <RecycleScroller
       v-if="height && !isEmpty"
       :style="{
@@ -62,6 +71,7 @@
 import TreeStore from "./model/tree-store";
 import { RecycleScroller } from "vue-virtual-scroller";
 import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
+import Input from "./packages/input";
 import { getNodeKey, findNearestComponent } from "./model/util";
 import ElTreeNode from "./tree-node.vue";
 import ElTreeVirtualNode from "./virtual-tree-node.vue";
@@ -76,6 +86,7 @@ export default {
     RecycleScroller,
     ElTreeNode,
     ElTreeVirtualNode,
+    Input,
   },
 
   mixins: [emitter],
@@ -178,6 +189,7 @@ export default {
         allowDrop: true,
       },
       treeNodeName: this.height ? "ElTreeVirtualNode" : "ElTreeNode",
+      inputModel: "",
     };
   },
 
@@ -242,6 +254,9 @@ export default {
   },
 
   methods: {
+    filterTree(value) {
+      this.filter(value);
+    },
     smoothTree(treeData) {
       return treeData.reduce((smoothArr, data) => {
         if (data.visible) {
@@ -667,3 +682,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.input-container {
+  margin-bottom: 10px;
+}
+</style>

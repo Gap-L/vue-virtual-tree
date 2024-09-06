@@ -1,7 +1,7 @@
-import veTree from "./src/components/ve-tree.vue";
+import vTree from "./src/components/v-tree.vue";
 
-veTree.install = function(Vue) {
-    Vue.component(veTree.name, veTree);
+vTree.install = function(Vue) {
+    Vue.component(vTree.name, vTree);
 };
 
-export default veTree;
+export default vTree;

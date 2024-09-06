@@ -3,8 +3,8 @@ import App from './App.vue'
 
 import "./assets/index.scss"
 
-import VueEasyTree from "./components/ve-tree.vue";
-Vue.component('VueEasyTree', VueEasyTree)
+import VueVirtualTree from "./components/v-tree.vue";
+Vue.component('VueVirtualTree', VueVirtualTree)
 
 new Vue({
     el: '#app',

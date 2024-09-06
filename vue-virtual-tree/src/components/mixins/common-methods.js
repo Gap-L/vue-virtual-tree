@@ -127,7 +127,7 @@ export default {
 
         handleCheckChange(_, ev) {
             const node = this.node;
-
+            
             node.setChecked(ev.target.checked, !this.tree.checkStrictly);
             this.$nextTick(() => {
                 const store = this.tree.store;

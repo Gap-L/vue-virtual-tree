@@ -1,15 +1,16 @@
 <template>
   <div class="ve-tree" style="height: calc(100vh - 20px)">
-    <vue-easy-tree
+    <vue-virtual-tree
       ref="veTree"
       node-key="id"
       :data="treeData"
       :props="props"
       :item-size="26"
+      :filter-node-method="filterNode"
       height="calc(100vh - 30px)"
       show-checkbox
     >
-    </vue-easy-tree>
+    </vue-virtual-tree>
   </div>
 </template>
 
@@ -23,6 +24,12 @@ export default {
       },
       treeData: [],
     };
+  },
+  methods: {
+    filterNode(value, data) {
+      if (!value) return true;
+      return data.name.indexOf(value) !== -1;
+    },
   },
   created() {
     const data = [],
@@ -53,4 +60,3 @@ export default {
   },
 };
 </script>
-
